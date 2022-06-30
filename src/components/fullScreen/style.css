@@ -1,0 +1,22 @@
+#mainBlock[data-theme=black] .full-screen-wrapper {
+  filter: brightness(50%);
+}
+#mainBlock[data-theme=black] .full-screen-content {
+  background-color: rgba(0, 0, 0, 0.726);
+}
+
+.full-screen-wrapper {
+  display: flex;
+  align-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: url("./pictures/fullScreenBG.jpg");
+}
+
+.full-screen-content {
+  min-width: 100%;
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+}
+
+/*# sourceMappingURL=style.css.map */

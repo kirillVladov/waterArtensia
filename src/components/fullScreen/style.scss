@@ -1,0 +1,26 @@
+$component: 'full-screen';
+@import '../../globalStyles/include.scss';
+
+#mainBlock[data-theme='black'] {
+    .#{$component}-wrapper {
+        filter: brightness(50%);
+    }
+
+    .#{$component}-content {
+        background-color: rgba(0, 0, 0, 0.726);
+    }
+}
+
+.#{$component}-wrapper {
+    display: flex;
+    align-items: center;
+    min-width: 100vw;
+    min-height: 100vh;
+    background: url('./pictures/fullScreenBG.jpg');
+}
+
+.#{$component}-content {
+    min-width: 100%;
+    color: $color-neutral-bright;
+    backdrop-filter: blur(10px);
+}
