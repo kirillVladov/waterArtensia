@@ -1,15 +1,29 @@
 .header-wrapper {
+  transition: 0.4s;
   position: fixed;
   top: 0;
   left: 0;
-  min-width: 100%;
+  width: 100%;
+}
+.header-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
   z-index: 10;
   backdrop-filter: blur(10px);
   padding: 24px;
+}
+.header-mobile-menu-wrapper {
+  display: none;
+}
+.header-loggin-icon path {
+  transition: 0.4s;
+}
+.header-loggin-icon:hover path {
+  fill: #0065ff !important;
 }
 .header-logo-wrapper > img {
   width: 100px;
@@ -24,13 +38,67 @@
 .header-menu-item:hover {
   color: #0065ff;
 }
+@media screen and (max-width: 900px) {
+  .header-container {
+    position: relative;
+    flex-direction: column;
+  }
+  .header-menu-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .header-loggin-wrapper {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+  .header-mobile-menu-wrapper {
+    position: absolute;
+    top: 32px;
+    left: 30px;
+  }
+  .header-mobile-menu-toggle {
+    background-color: transparent;
+    border: none;
+  }
+  .header-mobile-menu-toggle:hover {
+    cursor: pointer;
+  }
+  .header-mobile-menu-toggle:hover .header-mobile-menu-burger-row {
+    background-color: #0065ff !important;
+  }
+  .header-mobile-menu-burger-row {
+    transition: 0.4s;
+    height: 2px;
+    width: 34px;
+    margin-bottom: 8px;
+  }
+}
 
 #mainBlock[data-theme=white] .header-wrapper {
   background-color: rgba(255, 255, 255, 0.842);
 }
+#mainBlock[data-theme=white] .header-mobile-menu-burger-row {
+  background-color: #808080;
+}
+#mainBlock[data-theme=white] .header-loggin-icon path {
+  fill: #808080;
+}
 
 #mainBlock[data-theme=black] .header-wrapper {
   background-color: rgba(0, 0, 0, 0.658);
+}
+#mainBlock[data-theme=black] .header-mobile-menu-burger-row {
+  background-color: #e8e8e8;
+}
+#mainBlock[data-theme=black] .header-loggin-icon path {
+  fill: #e8e8e8;
+}
+#mainBlock[data-theme=black] .header-menu-item {
+  color: #e8e8e8;
+}
+#mainBlock[data-theme=black] .header-menu-item:hover {
+  color: #0065ff;
 }
 
 /*# sourceMappingURL=style.css.map */

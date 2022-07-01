@@ -3,17 +3,39 @@ $component: 'header';
 
 .#{$component} {
     &-wrapper {
+        transition: $duration-base;
         position: fixed;
         top: 0;
         left: 0;
-        min-width: 100%;
+        width: 100%;
+    }
+
+    &-container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        max-width: 1300px;
+        margin: 0 auto;
         z-index: 10;
         backdrop-filter: blur(10px);
         padding: 24px;
+    }
+
+    &-mobile-menu {
+        &-wrapper {
+            display: none;
+        }
+    }
+
+    &-loggin-icon {
+        & path {
+            transition: $duration-base;
+        }
+
+        &:hover path {
+            fill:$color-primary-base !important;
+        }
     }
 
     &-logo-wrapper > img{
@@ -28,8 +50,55 @@ $component: 'header';
         transition: $duration-base;
         padding: 0 20px;
 
-        &:hover{
+        &:hover {
             color: $color-primary-base;
+        }
+    }
+
+    
+    @media screen and (max-width: 900px) {
+        &-container {
+            position: relative;
+            flex-direction: column;
+        }   
+
+        &-menu-wrapper { 
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-loggin-wrapper {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+        }
+
+        &-mobile-menu {
+            &-wrapper {
+                position: absolute;
+                top: 32px;
+                left: 30px;
+            }
+
+            &-toggle {
+                background-color: transparent;
+                border: none;
+
+                &:hover {
+                    cursor: pointer;
+
+                    .#{$component}-mobile-menu-burger-row {
+                        background-color: $color-primary-base !important;
+                    }
+                }
+            }
+
+            &-burger-row {
+                transition: $duration-base;
+                height: 2px;
+                width: 34px;
+                margin-bottom: 8px;
+            }
         }
     }
 }
@@ -39,6 +108,18 @@ $component: 'header';
         &-wrapper {
             background-color: rgba(255, 255, 255, 0.842); //TODO check
         }
+
+        &-mobile-menu {
+            &-burger-row {
+                background-color: $color-neutral-semi-dark;
+            }
+        }
+
+        &-loggin-icon {
+            & path {
+                fill:$color-neutral-semi-dark;
+            }
+        }
     }
 }
 
@@ -47,5 +128,26 @@ $component: 'header';
         &-wrapper {
             background-color: rgba(0, 0, 0, 0.658); //TODO check
         }
+
+        &-mobile-menu {
+            &-burger-row {
+                background-color: $color-neutral-semi-bright;
+            }
+        }
+
+        &-loggin-icon {
+            & path {
+                fill:$color-neutral-semi-bright;
+            }
+        }
+
+        &-menu-item {
+           color: $color-neutral-semi-bright;
+
+           &:hover{
+               color: $color-primary-base;
+           }
+        }
     }
 }
+

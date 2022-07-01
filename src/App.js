@@ -12,8 +12,8 @@ function App() {
   return (
     <div id="mainBlock" className="App" data-theme='white'>
      <Header />
-     <FullScreen />
-     fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk 
+     {/* <FullScreen />
+     fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk fjdskfjhdsfjk  */}
     </div>
   );
 }
