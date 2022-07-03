@@ -4,6 +4,8 @@
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 10;
+  backdrop-filter: blur(10px);
 }
 .header-container {
   display: flex;
@@ -12,8 +14,6 @@
   align-items: center;
   max-width: 1300px;
   margin: 0 auto;
-  z-index: 10;
-  backdrop-filter: blur(10px);
   padding: 24px;
 }
 .header-mobile-menu-wrapper {
@@ -76,7 +76,7 @@
 }
 
 #mainBlock[data-theme=white] .header-wrapper {
-  background-color: rgba(255, 255, 255, 0.842);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 #mainBlock[data-theme=white] .header-mobile-menu-burger-row {
   background-color: #808080;

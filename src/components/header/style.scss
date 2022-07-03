@@ -8,6 +8,8 @@ $component: 'header';
         top: 0;
         left: 0;
         width: 100%;
+        z-index: 10;
+        backdrop-filter: blur(10px);
     }
 
     &-container {
@@ -17,8 +19,6 @@ $component: 'header';
         align-items: center;
         max-width: 1300px;
         margin: 0 auto;
-        z-index: 10;
-        backdrop-filter: blur(10px);
         padding: 24px;
     }
 
@@ -106,7 +106,7 @@ $component: 'header';
 #mainBlock[data-theme='white'] {
     .#{$component} {
         &-wrapper {
-            background-color: rgba(255, 255, 255, 0.842); //TODO check
+            background-color: rgba(255, 255, 255, 0.5); //TODO check
         }
 
         &-mobile-menu {

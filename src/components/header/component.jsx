@@ -8,22 +8,20 @@ const Header = () => {
     let currentTheme = window.localStorage.getItem('theme')
     const links = window.links
     const [controller, setController] = useState({
-        theme: currentTheme
+        theme: currentTheme,
+        search: useRef(null),
+        themeToggle: useRef(null)
     })
-    const search = useRef(null)
 
-    
     window.addEventListener('load', ()=>{
-        //get theme
-        if(window.localStorage.getItem('theme')) {
             setController((prev)=>{
                 return{
                     ...prev,
                     main: document.querySelector('#mainBlock'),
-                    theme: currentTheme
                 }
             })
-        } 
+
+        changeTheme();   
         
         window.localStorage.setItem('theme', controller.theme)
     })
@@ -40,11 +38,6 @@ const Header = () => {
         })
 
         isDark = isDark ? 'white' : 'black'
-        if(isDark !== 'black')
-          search.current.style.backgroundColor = 'black'
-        else
-            search.current.style.backgroundColor = 'white'
-
 
         window.localStorage.setItem('theme', controller.theme)
         controller.main.setAttribute('data-theme', controller.theme)
@@ -76,18 +69,38 @@ const Header = () => {
                     }                 */}
                 </div>
                 <div className="header-switch-mode-wrapper">
-                    <Switch
-                    onChange={changeTheme}
+                    {
+                        controller.theme === 'black' 
+                        
+                        ?
+
+                        <Switch
+                        onChange={changeTheme}
                         data-role='themeSwitchButton'
                         checked={false}
+                        ref={controller.themeToggle}
                         size="xl"
                         color="primary"
                         icon={<FontAwesomeIcon icon={faMoon} />} />
+                        
+                        :
+
+                        <Switch
+                        onChange={changeTheme}
+                        data-role='themeSwitchButton'
+                        checked={true}
+                        ref={controller.themeToggle}
+                        size="xl"
+                        color="primary"
+                        icon={<FontAwesomeIcon icon={faSun} />} />
+                    }
+                    
                 </div>
                 <div className="header-search-wrapper">
                     <Input 
-                        ref={search}
+                        ref={controller.search}
                         type='text'
+                        css={{colorAdjust:"Black"}}
                         clearable
                         placeholder="Поиск по сайту"
                      />
