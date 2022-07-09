@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.content-wrapper {
+  margin-top: 112px;
+}
+
 #mainBlock[data-theme="black"] {
   width: 100vw;
   height: 100vh;

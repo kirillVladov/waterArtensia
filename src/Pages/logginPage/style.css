@@ -1,0 +1,34 @@
+.loggin--page-wrapper {
+  background-color: #808080;
+}
+
+.loggin--page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 121px);
+}
+
+.loggin--page-form {
+  background-color: #e8e8e8;
+  padding: 24px 35px;
+  border-radius: 10px;
+}
+.loggin--page-form > form {
+  display: flex;
+  flex-direction: column;
+}
+.loggin--page-form-field {
+  margin: 10px 0;
+}
+.loggin--page-form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+.loggin--page-form-sub-headline {
+  margin-bottom: 20px;
+  color: #808080;
+}
+
+/*# sourceMappingURL=style.css.map */

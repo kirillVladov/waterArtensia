@@ -28,14 +28,17 @@
 .header-logo-wrapper > img {
   width: 100px;
 }
-.header-menu-item {
+.header-menu-wrapper {
+  display: flex;
+}
+.header-menu-item > a {
   color: #808080;
   text-decoration: none;
   font-size: 24px;
   transition: 0.4s;
   padding: 0 20px;
 }
-.header-menu-item:hover {
+.header-menu-item > a:hover {
   color: #0065ff;
 }
 @media screen and (max-width: 900px) {

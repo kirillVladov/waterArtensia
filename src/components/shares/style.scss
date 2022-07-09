@@ -1,0 +1,74 @@
+$component: 'shares';
+@import '../../globalStyles/include.scss';
+
+.#{$component} {
+    &-container {
+        margin: 0 auto;
+        max-width: 1300px;
+        padding: 30px 0;//TODO сделать template container
+        text-align: left;
+        transition: $duration-base;
+    }
+
+    &-headline {
+        font-weight: 500;
+
+        &-wrapper {
+            margin-bottom: 24px;
+        }
+    }
+
+    &-show-more {
+        transition: $duration-base;
+
+        &:hover {
+            color: $color-primary-bright;
+
+            &-arrow > path {
+                fill: $color-primary-bright;
+            }
+        }
+
+        &-arrow  {
+            margin-left: 10px;
+
+            & > path {
+                fill: $color-primary-base;
+            }
+        }
+    }
+    
+    &-subHeadline {
+        color: $color-neutral-semi-dark;
+        font-weight: 400;
+    }
+
+    &-collapse {
+        &-wrapper {
+            margin-bottom: 24px;
+        }
+    }
+}
+
+.nextui-expand-content {
+    color: $color-neutral-semi-dark;
+}
+
+#mainBlock[data-theme="black"] {
+    .#{$component} {
+        &-wrapper {
+            background-color: black;
+            color: $color-neutral-bright;
+        }
+
+        &-collapse {
+            background-color: $color-neutral-dark;
+            color: $color-neutral-semi-bright;
+
+            & h3{
+                color: $color-neutral-semi-bright;
+            }
+        }
+        
+    }
+}

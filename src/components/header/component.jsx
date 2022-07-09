@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Input, Switch } from "@nextui-org/react";
 import './style.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import {faMoon, faSun, faUser } from "@fortawesome/free-regular-svg-icons";
 
 const Header = () => {
@@ -57,16 +58,16 @@ const Header = () => {
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SCA_company_logo.svg/2560px-SCA_company_logo.svg.png" />
                 </div>
                 <div className="header-menu-wrapper">
-                <a className="header-menu-item" href={''}>Главная</a>
-                <a className="header-menu-item" href={''}>Главная</a>
-                <a className="header-menu-item" href={''}>Главная</a>
-                <a className="header-menu-item" href={''}>Главная</a>
-
-                    {/* {
-                        Object.entries(links).forEach(([item, key]) => (
-                            <a className="header-menu-item" href={key}>{item}</a>
+                {
+                       Object.entries(links).map(([key, value]) => (
+                            <div className="header-menu-item">
+                                <Link to={key}>
+                                    {value.name}
+                                </Link>
+                            </div>
                         ))
-                    }                 */}
+                        
+                }
                 </div>
                 <div className="header-switch-mode-wrapper">
                     {
@@ -106,9 +107,9 @@ const Header = () => {
                      />
                 </div>
                 <div className="header-loggin-wrapper">
-                    <a href="/loggin">
+                    <Link to="/loggin">
                         <FontAwesomeIcon icon={faUser} size="2x" className="header-loggin-icon" />
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>

@@ -2,28 +2,43 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './components/header/component';
 import FullScreen from './components/fullScreen/component';
-import { NextUIProvider } from '@nextui-org/react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from 'react';
-import Shares from './components/shares/component';
-import Brands from './components/brands/component';
+import Loggin from './Pages/logginPage/component';
+import MainPage from './Pages/Main/component'
+
+
 
 function App() {
   const links = {
-    '/' : 'Главная' // TODO сделать глобальной
-  }
+    '/' : {
+        name: 'Main',
+        component: <MainPage /> 
+    },
+    '/loggin' : {
+        name: 'loggin',
+        component: <Loggin /> 
+    },
+  }// TODO сделать глобальной
   window.links = links
 
   const [controller, setController] = useState({})
 
   return (
-  <NextUIProvider>
       <div id="mainBlock" className="App" data-theme='white'>
-        <Header />
-        <FullScreen />
-        <Shares />
-        <Brands />
+        <BrowserRouter>
+          <Header />
+            <div className='content-wrapper'>
+          <Routes>
+              {
+                Object.entries(links).map(([key, values]) => (
+                    <Route path={key} element={values.component} />
+                ))
+              }
+            </Routes>
+            </div>
+        </BrowserRouter>
       </div>
-  </NextUIProvider>
   );
 }
 
