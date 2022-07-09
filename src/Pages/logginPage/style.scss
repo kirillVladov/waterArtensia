@@ -1,7 +1,7 @@
 @import '../../globalStyles/include.scss';
 $component: 'loggin--page';
 
-.#{$component}-wrapper {
+body {
     background-color: $color-neutral-semi-dark; //TODO add back
 }
 

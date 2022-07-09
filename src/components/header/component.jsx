@@ -22,13 +22,12 @@ const Header = () => {
                 }
             })
 
-        changeTheme();   
+        // changeTheme();   
         
         window.localStorage.setItem('theme', controller.theme)
     })
 
     function changeTheme(e) {
-        e.preventDefault()
         let isDark = e.target.checked
 
         setController((prev) => {
@@ -60,13 +59,12 @@ const Header = () => {
                 <div className="header-menu-wrapper">
                 {
                        Object.entries(links).map(([key, value]) => (
-                            <div className="header-menu-item">
+                            <div className="header-menu-item" key={key}>
                                 <Link to={key}>
                                     {value.name}
                                 </Link>
                             </div>
                         ))
-                        
                 }
                 </div>
                 <div className="header-switch-mode-wrapper">
@@ -76,6 +74,7 @@ const Header = () => {
                         ?
 
                         <Switch
+                        aria-label="header"
                         onChange={changeTheme}
                         data-role='themeSwitchButton'
                         checked={false}
@@ -87,6 +86,7 @@ const Header = () => {
                         :
 
                         <Switch
+                        aria-label="header"
                         onChange={changeTheme}
                         data-role='themeSwitchButton'
                         checked={true}
@@ -99,6 +99,7 @@ const Header = () => {
                 </div>
                 <div className="header-search-wrapper">
                     <Input 
+                        aria-label="header"
                         ref={controller.search}
                         type='text'
                         css={{colorAdjust:"Black"}}

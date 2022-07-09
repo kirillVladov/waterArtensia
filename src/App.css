@@ -7,12 +7,12 @@
 }
 
 #mainBlock[data-theme="black"] {
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
   transition: .4s;
 }
 
-#mainBlock[data-theme="black"] {
+#mainBlock[data-theme="black"]{
   background-color: black;
 }
  
