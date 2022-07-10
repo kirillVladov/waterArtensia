@@ -36,5 +36,18 @@ body {
         margin-bottom: 20px;
         color: $color-neutral-semi-dark;
     }
+
+    &-switch-mode {
+        margin-top: 24px;
+        font-size: 18px;
+        color: $color-neutral-semi-dark;
+        text-align: left;
+        transition: $duration-base;
+
+        &:hover {
+            cursor: pointer;
+            color: $color-primary-base;
+        }
+    }
 }
 

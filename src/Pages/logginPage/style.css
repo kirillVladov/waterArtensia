@@ -30,5 +30,16 @@ body {
   margin-bottom: 20px;
   color: #808080;
 }
+.loggin--page-form-switch-mode {
+  margin-top: 24px;
+  font-size: 18px;
+  color: #808080;
+  text-align: left;
+  transition: 0.4s;
+}
+.loggin--page-form-switch-mode:hover {
+  cursor: pointer;
+  color: #0065ff;
+}
 
 /*# sourceMappingURL=style.css.map */

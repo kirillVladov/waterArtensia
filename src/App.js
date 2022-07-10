@@ -7,6 +7,7 @@ import { useMemo, useState } from 'react';
 import Loggin from './Pages/logginPage/component';
 import MainPage from './Pages/Main/component'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import User from './services/user.service';
 
 
 function App() {
@@ -21,7 +22,6 @@ function App() {
     },
   }// TODO сделать глобальной
   window.links = links
-
 
   const queryClient = new QueryClient()
   // const [controller, setController] = useState({})
